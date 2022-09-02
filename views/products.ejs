@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Products</title>
+     
+    <style type="text/css" media="screen">
+        .body {
+            display: flex;
+            padding: 25px;
+            flex-wrap: wrap;
+        }
+        .thumbnail{
+            width: 250px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <h2>Electronic Products</h2>
+    <div class="body">
+        <% for (product of products) { %>
+            <div class="thumbnail">
+                <a href="product/<%= product.id %>">
+                <img src= <%= product.thumbnail %> width= '250px' />
+                </a>
+                <label> <%= product.title %> </label>
+                <label>product Price $<%= product.price %></label>
+                <a href="cart/<%= product.id %>"><button>Add to Cart</button></a>
+            </div>
+          <% } %>   
+    </div>
+</body>
+ 
+</html>
